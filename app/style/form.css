@@ -106,30 +106,42 @@ form button {
     outline: none;
     border-radius: 3px;
     align-self: end;
+    font-size: 12pt;
 }
 
 
 
 main #historias {
-    flex: 1;
+    flex: 1 1 0%;
     height: 90%;
     margin-left: 20px;
+    overflow-x: hidden;
+    max-width: 60%;
+    scrollbar-width: thin;
+    scrollbar-color: #5e594e #f4ecd8;
 }
 
 main #historias article.artigo {
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 10px 5px 5px #5e594e;
     border: 1px solid #5e594e;
-    height: 100px;
-    text-overflow: ellipsis;
+    height: 145px;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: inherit;
+    display: -webkit-box;
+    margin-top: 10px;
 }
 
 main #historias article.artigo h3 {
     font-family: 'Georgia', sans-serif;
     color: #5e594e;
     font-style: italic;
-    font-size: 16pt;
+    font-size: 18pt;
     text-decoration: underline;
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-bottom: 18px;
 }
 
 main #historias article.artigo strong {
@@ -140,7 +152,8 @@ main #historias article.artigo strong {
 
 main #historias article.artigo p{
     font-family: 'Georgia', sans-serif;
-    color:#5e594e
+    color:#5e594e;
+    margin: 15px 0px 0px 12px;
 }
 
 dialog#modal::backdrop{
