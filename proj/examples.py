@@ -13,3 +13,8 @@ def converte_em_dolares(reais: float):
     print(f"O valor em dólares é: {dolares}")
 
 
+def verifica_membro_do_clube(nome:str, idade:int) -> str:
+    if nome != "João" and idade < 28:
+        return "Você não é membro do clube"
+    
+    return "Bem vindo ao clube!"
