@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Python - Objetos e Classes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            border-bottom: 4px solid #4a5568;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+        .card {
+            background: #fdfdfd;
+            border-left: 6px solid #cbd5e0;
+            padding: 22px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+        }
+        /* Cores dos Níveis */
+        .card.facil { border-left-color: #2ecc71; }
+        .card.medio { border-left-color: #f1c40f; }
+        .card.dificil { border-left-color: #e74c3c; }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        
+        .badge.facil { background-color: #2ecc71; }
+        .badge.medio { background-color: #f1c40f; color: #333; }
+        .badge.dificil { background-color: #e74c3c; }
+        
+        h2 {
+            margin-top: 0;
+            color: #2d3748;
+            font-size: 1.35em;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            margin: 8px 0;
+        }
+        ul {
+            margin: 8px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 6px;
+            font-size: 1.05em;
+        }
+        code {
+            background-color: #edf2f7;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #b7791f;
+        }
+        .card.dificil code { color: #c53030; }
+        .card.facil code { color: #22543d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Desafio Python: Programação Orientada a Objetos (Classes)</h1>
+
+        <div class="card facil">
+            <span class="badge facil">Fácil</span>
+            <h2>1. O Primeiro Objeto</h2>
+            <p>Crie uma classe chamada <code>Pessoa</code>.</p>
+            <ul>
+                <li><strong>Construtor (<code>__init__</code>):</strong> Deve receber e armazenar os atributos <code>nome</code> (string) e <code>idade</code> (inteiro).</li>
+                <li><strong>Método:</strong> Crie um método chamado <code>apresentar(self)</code> que retorna a string: <em>"Olá, meu nome é [nome] e eu tenho [idade] anos."</em></li>
+            </ul>
+        </div>
+
+        <div class="card facil">
+            <span class="badge facil">Fácil</span>
+            <h2>2. Controle de Estoque de Livros</h2>
+            <p>Crie uma classe chamada <code>Livro</code>.</p>
+            <ul>
+                <li><strong>Construtor:</strong> Deve receber <code>titulo</code>, <code>autor</code> e <code>quantidade_copias</code> (inteiro).</li>
+                <li><strong>Métodos:</strong> 
+                    <br><code>vender(self)</code>: Diminui a quantidade de cópias em 1.
+                    <br><code>reabastecer(self, quantidade)</code>: Aumenta o estoque baseado no número recebido.
+                </li>
+            </ul>
+        </div>
+
+        <div class="card facil">
+            <span class="badge facil">Fácil</span>
+            <h2>3. O Interruptor Inteligente</h2>
+            <p>Crie uma classe chamada <code>Lampada</code> que controle seu próprio estado interno.</p>
+            <ul>
+                <li><strong>Construtor:</strong> Não recebe parâmetros extras além do próprio objeto. Ela deve começar sempre desligada (atributo <code>ligada = False</code>).</li>
+                <li><strong>Métodos:</strong>
+                    <br><code>clicar_interruptor(self)</code>: Inverte o estado atual (se estava ligada vira falsa, se estava desligada vira verdadeira).
+                    <br><code>status(self)</code>: Retorna o texto <em>"A lâmpada está ligada"</em> ou <em>"A lâmpada está desligada"</em>.
+                </li>
+            </ul>
+        </div>
+
+        <div class="card medio">
+            <span class="badge medio">Médio</span>
+            <h2>4. Modificando Atributos com Validação</h2>
+            <p>Crie uma classe chamada <code>ContaBancaria</code>.</p>
+            <ul>
+                <li><strong>Construtor:</strong> Recebe o nome do <code>titular</code> e inicializa o <code>saldo = 0.0</code>.</li>
+                <li><strong>Métodos:</strong>
+                    <br><code>depositar(self, valor)</code>: Só adiciona ao saldo se o valor for positivo.
+                    <br><code>sacar(self, valor)</code>: Se houver saldo suficiente, subtrai o valor e retorna <code>True</code>. Caso contrário, não altera nada e retorna <code>False</code>.
+                </li>
+            </ul>
+        </div>
+
+        <div class="card medio">
+            <span class="badge medio">Médio</span>
+            <h2>5. Usando Condicionais no Objeto</h2>
+            <p>Crie uma classe chamada <code>Aluno</code> para avaliar notas escolares.</p>
+            <ul>
+                <li><strong>Construtor:</strong> Recebe o <code>nome</code> e uma lista contendo notas numéricas (<code>notas</code>).</li>
+                <li><strong>Métodos:</strong>
+                    <br><code>calcular_media(self)</code>: Calcula e retorna a média das notas da lista.
+                    <br><code>verificar_situacao(self)</code>: Se a média for &gt;= 7.0 retorna <em>"Aprovado"</em>; entre 5.0 e 6.9 retorna <em>"Recuperação"</em>; menor que 5.0 retorna <em>"Reprovado"</em>.
+                </li>
+            </ul>
+        </div>
+
+        <div class="card medio">
+            <span class="badge medio">Médio</span>
+            <h2>6. Sistema de Clima</h2>
+            <p>Crie uma classe chamada <code>Termometro</code>.</p>
+            <ul>
+                <li><strong>Construtor:</strong> Recebe a <code>temperatura_atual</code> (float).</li>
+                <li><strong>Métodos:</strong> <code>aumentar(self, graus)</code> e <code>diminuir(self, graus)</code> modificam a temperatura. O método <code>alerta_clima(self)</code> retorna <em>"Congelando"</em> (abaixo de 0°C), <em>"Agradável"</em> (de 0 a 25°C) ou <em>"Muito Quente"</em> (acima de 25°C).</li>
+            </ul>
+        </div>
+
+        <div class="card medio">
+            <span class="badge medio">Médio</span>
+            <h2>7. Classe com Contador Interno</h2>
+            <p>Crie uma classe chamada <code>Carro</code>.</p>
+            <ul>
+                <li><strong>Construtor:</strong> Recebe <code>modelo</code> e <code>ano</code>. Internamente, cria de forma fixa o atributo <code>odometro = 0</code> para contar a quilometragem.</li>
+                <li><strong>Método:</strong> <code>viajar(self, distancia)</code> adiciona a distância rodada ao odômetro. O método deve impedir e ignorar números negativos por segurança.</li>
+            </ul>
+        </div>
+
+        <div class="card medio">
+            <span class="badge medio">Médio</span>
+            <h2>8. Gerenciador de Playlist</h2>
+            <p>Crie uma classe chamada <code>Playlist</code>.</p>
+            <ul>
+                <li><strong>Construtor:</strong> Recebe o <code>nome</code> da lista e define o atributo <code>musicas</code> como uma lista inicialmente vazia.</li>
+                <li><strong>Métodos:</strong> <code>adicionar_musica(self, nome_musica)</code>, <code>remover_musica(self, nome_musica)</code> (com validação se ela existe) e <code>mostrar_playlist(self)</code> para exibir todas na tela.</li>
+            </ul>
+        </div>
+
+        <div class="card medio">
+            <span class="badge medio">Médio</span>
+            <h2>9. Tamagotchi (Bichinho Virtual)</h2>
+            <p>Crie uma classe chamada <code>BichinhoVirtual</code>.</p>
+            <ul>
+                <li><strong>Construtor:</strong> Recebe o <code>nome</code> do pet e define <code>fome = 50</code> e <code>felicidade = 50</code>.</li>
+                <li><strong>Métodos:</strong>
+                    <br><code>alimentar(self)</code>: Reduz fome em 15 e sobe felicidade em 5 (A fome nunca fica abaixo de 0).
+                    <br><code>brincar(self)</code>: Sobe felicidade em 20 e aumenta fome em 10 (Felicidade máxima é 100).
+                </li>
+            </ul>
+        </div>
+
+        <div class="card dificil">
+            <span class="badge dificil">Difícil</span>
+            <h2>10. Carrinho de Compras Interativo</h2>
+            <p>Crie uma classe chamada <code>CarrinhoDeCompras</code>.</p>
+            <ul>
+                <li><strong>Estrutura:</strong> Não recebe parâmetros externos. Cria de forma fixa duas listas vazias: <code>itens</code> (para strings) e <code>precos</code> (para floats).</li>
+                <li><strong>Métodos:</strong> 
+                    <br><code>adicionar_item(self, nome_produto, preco_produto)</code> adiciona cada dado em sua respectiva lista.
+                    <br><code>calcular_total(self)</code> percorre a lista de preços, somando e retornando o total do carrinho.
+                </li>
+            </ul>
+        </div>
+
+        <div class="card medio">
+            <span class="badge medio">Médio</span>
+            <h2>11. O Jogo do Alvo</h2>
+            <p>Crie uma classe chamada <code>Jogador</code>.</p>
+            <ul>
+                <li><strong>Estrutura:</strong> Recebe o <code>nome</code> do competidor e inicia sua <code>pontuacao = 0</code>.</li>
+                <li><strong>Método:</strong> <code>acertou_alvo(self, distancia_do_centro)</code> recebe a distância do tiro em cm. Se for menor que 5cm, soma 100 pontos; de 5 a 20cm, ganha 50 pontos; acima de 20cm ganha apenas 10 pontos.</li>
+            </ul>
+        </div>
+
+        <div class="card medio">
+            <span class="badge medio">Médio</span>
+            <h2>12. Cadastro de Funcionários</h2>
+            <p>Crie uma classe chamada <code>Empresa</code>.</p>
+            <ul>
+                <li><strong>Estrutura:</strong> Recebe <code>nome_empresa</code> e tem uma lista interna <code>funcionarios</code> vazia.</li>
+                <li><strong>Métodos:</strong> <code>contratar(nome)</code>, <code>demitir(nome)</code> e o método <code>verificar_funcionario(nome)</code> que retorna <code>True</code> ou <code>False</code> caso o nome conste no quadro de funcionários.</li>
+            </ul>
+        </div>
+
+        <div class="card dificil">
+            <span class="badge dificil">Difícil</span>
+            <h2>13. Agenda de Contatos</h2>
+            <p>Crie uma classe chamada <code>Agenda</code>.</p>
+            <ul>
+                <li><strong>Estrutura:</strong> Mantém internamente duas listas: <code>nomes</code> e <code>telefones</code>.</li>
+                <li><strong>Métodos:</strong> 
+                    <br><code>salvar_contato(self, nome, telefone)</code> adiciona os dados.
+                    <br><code>buscar_telefone(self, nome_pesquisado)</code> localiza o nome, acha o seu índice correspondente e devolve o telefone. Se não encontrar, retorna <em>"Contato não encontrado"</em>.
+                </li>
+            </ul>
+        </div>
+
+        <div class="card dificil">
+            <span class="badge dificil">Difícil</span>
+            <h2>14. Interação entre Objetos: Transferência</h2>
+            <p>Utilize a estrutura desenvolvida na classe <code>ContaBancaria</code> do exercício 4.</p>
+            <ul>
+                <li><strong>Regra:</strong> Adicione o método <code>transferir(self, conta_destino, valor)</code>.</li>
+                <li><strong>Funcionamento:</strong> O parâmetro <code>conta_destino</code> receberá <strong>outro objeto</strong> de conta. Verifique se a conta atual possui saldo. Se sim, retire de si e execute o método <code>.depositar(valor)</code> diretamente na conta de destino, retornando <code>True</code>.</li>
+            </ul>
+        </div>
+
+        <div class="card dificil">
+            <span class="badge dificil">Difícil</span>
+            <h2>15. Sistema de Combate RPG</h2>
+            <p>Crie uma classe chamada <code>Personagem</code> capaz de interagir em um combate com outros personagens.</p>
+            <ul>
+                <li><strong>Construtor:</strong> Recebe <code>nome</code>, <code>vida</code> (int) e <code>ataque</code> (int).</li>
+                <li><strong>Métodos:</strong>
+                    <br><code>esta_vivo(self)</code>: Retorna <code>True</code> se a vida for maior que 0.
+                    <br><code>receber_dano(self, quantidade)</code>: Diminui a vida (nunca deixando ficar menor que zero).
+                    <br><code>atacar(self, oponente)</code>: Recebe <strong>outro objeto</strong> do tipo <code>Personagem</code> como oponente e, caso o atacante esteja vivo, aplica o dano chamando o método <code>oponente.receber_dano()</code> passando seu próprio poder de ataque.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
