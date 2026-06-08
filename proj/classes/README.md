@@ -37,7 +37,7 @@ Crie uma classe chamada `Lampada`.
 Crie uma classe chamada `ContaBancaria`.
 * **Construtor**: Recebe `titular` e começa com o atributo `saldo = 0.0`.
 * **Métodos**:
-  * `depositar(self, valor)`: Adiciona o valor ao saldo apenas se o valor for maior que zero.
+  * `depositar(self, valor)`: Adiciona o valor ao saldo.
   * `sacar(self, valor)`: Se o saldo for suficiente, subtrai o valor do saldo e retorna `True`. Se o saldo for insuficiente ou o valor for inválido, não altera o saldo e retorna `False`.
 
 ---
